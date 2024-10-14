@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Estilo para la barra de menú */
+        .menu-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FE61DC;
+            color: white;
+            padding: 10px 20px;
+            position: relative; /* Posición relativa para el menú */
+        }
+
+        .menu-bar h1 {
+            margin: 0;
+            font-size: 24px; /* Tamaño del texto del nombre del restaurante */
+        }
+
+        .menu-bar .links {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1; /* Para ocupar el espacio disponible */
+        }
+
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* Espacio entre los enlaces */
+            transition: color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            color: #FFD700; /* Color al pasar el mouse por encima */
+        }
+
+        .cart-icon {
+            font-size: 24px; /* Tamaño del icono del carrito */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+
+        header {
+            background-color: #FE61DC;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab.active {
+            background-color: #FE61DC;
+            color: white;
+        }
+
+        .menu {
+            display: none;
+            padding: 20px;
+        }
+
+        .menu.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .menu-item p {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .menu-item span {
+            color: #FE61DC;
+            font-weight: bold;
+            font-size: 18px;
+            display: block; /* Cambiado a block para mantenerlo arriba de los botones */
+            margin-bottom: 10px; /* Margen para espacio entre precio y botones */
+        }
+
+        .menu-item button {
+            background-color: #0065FF;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 5px 0; /* Margen vertical para espacio entre botones */
+            width: 100%; /* Hacer los botones del ancho completo */
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .menu-item button:hover {
+            background-color: #0053cc;
+        }
+
+        /* Estilo del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Media Queries para responsividad */
+        @media (max-width: 600px) {
+            .menu-item button {
+                width: 100%; /* Mantener los botones en el ancho completo en pantallas pequeñas */
+            }
+
+            .menu-bar {
+                flex-direction: column; /* Cambiar la dirección en pantallas pequeñas */
+                align-items: flex-start; /* Alinear a la izquierda */
+            }
+
+            .menu-bar .links {
+                justify-content: space-between; /* Espaciado entre enlaces */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <h1>Restaurante Delicioso</h1>
+        <div class="links">
+            <a href="#comida">Comida</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#postres">Postres</a>
+        </div>
+        <div class="cart-icon" onclick="openCartModal()">🛒 Carrito</div> <!-- Icono del carrito -->
+    </div>
+
+    <header>
+        <h1>Menú Digital</h1>
+    </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showMenu('food', this)">Comida</div>
+        <div class="tab" onclick="showMenu('drinks', this)">Bebidas</div>
+    </div>
+
+    <section id="food" class="menu active">
+        <div class="menu-item">
+            <img src="img/chila.PNG" alt="Pizza Margherita">
+            <h3>Pizza Margherita</h3>
+            <p>Ingredientes: Tomate, mozzarella, albahaca.</p>
+            <span>$150 MXN</span>
+            <button onclick="addToCart('Pizza Margherita')">Agregar al carrito</button>
+            <button onclick="openModal('Pizza Margherita', 'Ingredientes: Tomate, mozzarella, albahaca. Precio: $150 MXN')">Ver detalle</button>
+        </div>
+        <div class="menu-item">
+            <img src="img/burger-2.PNG" alt="Ensalada César">
+            <h3>Ensalada César</h3>
+            <p>Ingredientes: Lechuga, crutones, aderezo César.</p>
+            <span>$100 MXN</span>
+            <button onclick="addToCart('Ensalada César')">Agregar al carrito</button>
+            <button onclick="openModal('Ensalada César', 'Ingredientes: Lechuga, crutones, aderezo César. Precio: $100 MXN')">Ver detalle</button>
+        </div>
+        <div class="menu-item">
+            <img src="img/burger-2.PNG" alt="Taco de Pollo">
+            <h3>Taco de Pollo</h3>
+            <p>Ingredientes: Tortilla de maíz, pollo, cebolla.</p>
+            <span>$50 MXN</span>
+            <button onclick="addToCart('Taco de Pollo')">Agregar al carrito</button>
+            <button onclick="openModal('Taco de Pollo', 'Ingredientes: Tortilla de maíz, pollo, cebolla. Precio: $50 MXN')">Ver detalle</button>
+        </div>
+    </section>
+
+    <section id="drinks" class="menu">
+        <div class="menu-item">
+            <img src="img/Asset-9-8csss7a.png" alt="Agua de Jamaica">
+            <h3>Agua de Jamaica</h3>
+            <p>Ingredientes: Flor de Jamaica, azúcar, agua.</p>
+            <span>$30 MXN</span>
+            <button onclick="addToCart('Agua de Jamaica')">Agregar al carrito</button>
+            <button onclick="openModal('Agua de Jamaica', 'Ingredientes: Flor de Jamaica, azúcar, agua. Precio: $30 MXN')">Ver detalle</button>
+        </div>
+        <div class="menu-item">
+            <img src="img/americano.PNG" alt="Soda Limonada">
+            <h3>Soda Limonada</h3>
+            <p>Ingredientes: Limonada, gas, azúcar.</p>
+            <span>$35 MXN</span>
+            <button onclick="addToCart('Soda Limonada')">Agregar al carrito</button>
+            <button onclick="openModal('Soda Limonada', 'Ingredientes: Limonada, gas, azúcar. Precio: $35 MXN')">Ver detalle</button>
+        </div>
+    </section>
+
+    <!-- Modal para detalles del producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDetails"></p>
+        </div>
+    </div>
+
+    <!-- Modal para el carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2>Tu carrito</h2>
+            <ul id="cartItems"></ul>
+            <button onclick="checkout()">Pagar</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = []; // Array para almacenar los artículos del carrito
+
+        function showMenu(menuType, tabElement) {
+            // Ocultar todas las secciones del menú
+            document.querySelectorAll('.menu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+
+            // Mostrar la sección correspondiente
+            document.getElementById(menuType).classList.add('active');
+
+            // Cambiar el estado de las pestañas
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Activar la pestaña correspondiente
+            tabElement.classList.add('active');
+        }
+
+        function addToCart(item) {
+            cart.push(item); // Agregar el artículo al carrito
+            alert(`${item} ha sido agregado al carrito`);
+        }
+
+        function openModal(title, details) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDetails').innerText = details;
+            document.getElementById('productModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = "none";
+        }
+
+        function openCartModal() {
+            const cartItemsList = document.getElementById('cartItems');
+            cartItemsList.innerHTML = ''; // Limpiar la lista de artículos del carrito
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                cartItemsList.appendChild(li); // Agregar cada artículo a la lista
+            });
+            document.getElementById('cartModal').style.display = "block"; // Mostrar el modal del carrito
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').style.display = "none"; // Cerrar el modal del carrito
+        }
+
+        function checkout() {
+            alert('Proceso de pago no implementado'); // Mensaje de alerta al hacer clic en pagar
+        }
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modals = [document.getElementById('productModal'), document.getElementById('cartModal')];
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        };
+    </script>
+</body>
+</html>
