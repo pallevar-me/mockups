@@ -17,31 +17,31 @@
 
         /* Header */
         header { padding: 20px 0; background-color: #f8f9fa; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .navbar a { margin-left: 20px; font-weight: bold; color: #555; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .navbar a { margin: 10px 20px; font-weight: bold; color: #555; }
         .navbar a:hover { color: #1a73e8; }
 
         /* Hero Section */
-        .hero { display: flex; align-items: center; justify-content: space-between; padding: 80px 0; }
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 80px 0; flex-wrap: wrap; }
         .hero-content { max-width: 600px; }
-        .hero h1 { font-size: 3em; color: #1c2434; margin-bottom: 10px; }
+        .hero h1 { font-size: 2.5em; color: #1c2434; margin-bottom: 10px; }
         .hero p { font-size: 1.2em; margin-bottom: 20px; }
-        .hero img { max-width: 500px; border-radius: 10px; }
+        .hero img { max-width: 100%; border-radius: 10px; }
 
         /* Features Section */
         .features { background-color: #f8f9fa; padding: 60px 0; }
         .feature { text-align: center; padding: 20px; }
         .feature h3 { margin-top: 15px; color: #1c2434; }
-        .features-container { display: flex; justify-content: space-between; gap: 20px; }
+        .features-container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
         /* Pricing Section */
         .pricing { padding: 60px 0; background-color: #ffffff; }
         .pricing h2 { text-align: center; color: #1c2434; margin-bottom: 40px; }
-        .pricing-plans { display: flex; justify-content: space-between; gap: 20px; }
-        .plan { border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 23%; }
+        .pricing-plans { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+        .plan { border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; max-width: 280px; }
         .plan h3 { color: #1a73e8; margin-bottom: 10px; }
-        .plan p { font-size: 1.2em; margin: 10px 0; }
-        .plan-price { font-size: 2em; color: #333; margin: 15px 0; }
+        .plan p { font-size: 1em; margin: 10px 0; }
+        .plan-price { font-size: 1.5em; color: #333; margin: 15px 0; }
         .plan .btn-primary { margin-top: 15px; }
 
         /* Testimonials */
@@ -55,6 +55,23 @@
         .footer-links li, .footer-social li { margin-bottom: 10px; }
         .footer-social li a { color: white; font-size: 1.5em; }
         .footer-social li a:hover { color: #1a73e8; }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar a { margin: 10px 5px; }
+            .hero { flex-direction: column; text-align: center; }
+            .features-container, .pricing-plans { flex-direction: column; align-items: center; }
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1.1em; }
+        }
+
+        @media (max-width: 480px) {
+            .navbar { flex-direction: column; }
+            .hero h1 { font-size: 1.8em; }
+            .hero p { font-size: 1em; }
+            .feature h3 { font-size: 1.1em; }
+            .plan { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -62,13 +79,13 @@
 <!-- Header -->
 <header>
     <div class="container navbar">
-        <h1>PaLlevar</h1>
+        <h1>Pallevar</h1>
         <nav>
             <a href="#home">Home</a>
             <a href="#features">Características</a>
             <a href="#pricing">Precios</a>
-            <a href="https://mimenu.pallevar.me/">Login</a>
-            <a href="https://mimenu.pallevar.me/newuser">Registro</a>
+            <a href="#login">Login</a>
+            <a href="#register">Registro</a>
         </nav>
     </div>
 </header>
@@ -142,7 +159,7 @@
     <div class="container">
         <h2 style="text-align: center; color: #1c2434; margin-bottom: 40px;">Testimonios</h2>
         <p class="testimonial">"Pallevar ha transformado la manera en que gestionamos los pedidos en nuestro restaurante. Es rápido, fácil de usar y ha mejorado la experiencia de nuestros clientes." - Juan Pérez, Restaurante La Sabrosura</p>
-        <p class="testimonial">"Una plataforma excelente, con todas las funcionalidades que un negocio necesita para crecer en el mercado actual." - María López, Cafetería Buena Vida</p>
+        <p class="testimonial">"Una plataforma excelente, con todo lo que necesitamos para llevar nuestro negocio al siguiente nivel." - María García, Café Gourmet</p>
     </div>
 </section>
 
@@ -150,21 +167,21 @@
 <footer>
     <div class="container footer-container">
         <div>
-            <h3>Sobre Nosotros</h3>
+            <h3>Pallevar</h3>
             <ul class="footer-links">
-                <li><a href="#home">Inicio</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Características</a></li>
                 <li><a href="#pricing">Precios</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Registro</a></li>
             </ul>
         </div>
         <div>
-            <h3>Redes Sociales</h3>
+            <h3>Síguenos</h3>
             <ul class="footer-social">
-                <li><a href="#" target="_blank">&#x1F465; Facebook</a></li>
-                <li><a href="#" target="_blank">&#x1F4F7; Instagram</a></li>
-                <li><a href="#" target="_blank">&#x1F5E3; LinkedIn</a></li>
-                <li><a href="#" target="_blank">&#x1F3AE; Twitter</a></li>
+                <li><a href="#" target="_blank">&#x1F30D; Facebook</a></li>
+                <li><a href="#" target="_blank">&#x1F4F1; LinkedIn</a></li>
+                <li><a href="#" target="_blank">&#x1F426; Twitter</a></li>
             </ul>
         </div>
     </div>
