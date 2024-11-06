@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barra de Navegación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
+
+            /*
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            */
         }
 
 
@@ -20,7 +29,11 @@
     </style>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/system.css">
+    <link rel="stylesheet" href="css/beneficios.css">
     <link rel="stylesheet" href="css/precios.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div class="globalnav-wrapper-c360">
@@ -35,12 +48,14 @@
                     <div></div>
                     <div></div>
                 </div>
-                <div class="logo">PaLlevar</div>
+                <div class="logo">
+                    <img src="img/logo2-pallevar.PNG" alt="Panel Administrativo">
+                </div>
                 <ul class="nav-links-1">
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#about">Acerca de</a></li>
                     <li><a href="#services">Servicios</a></li>
-                    <li><a href="#pricing">Precios</a></li>
+                    <li><a href="#precios">Precios</a></li>
                     <li><a href="#contact">Contacto</a></li>
                     <li> 
                         <button class="dropdown-button" id="login-dropdown">Inicio Sesión</button>
@@ -74,7 +89,7 @@
         </ul>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Contenedor de texto -->
@@ -95,9 +110,67 @@
             </div>
         </div>
     </section>
+        
+    <section class="system-section" id="services">
+        <h2>Nuestro Ecosistema</h2>
+        <div class="system-container">
+            <div class="system-item">
+                <img src="img/menu.PNG" alt="Menu interactivo">
+                <div class="system-description">
+                    <h3>Menú Interactivo</h3>
+                    <p>Facilita a tus clientes la exploración y selección de platillos desde cualquier dispositivo.</p>
+                </div>
+            </div>
+            <div class="system-item">
+                <img src="img/comanda.PNG" alt="Comanda digital">
+                <div class="system-description">
+                    <h3>Comanda Digital</h3>
+                    <p>Automatiza la gestión de pedidos y agiliza el servicio directamente en la cocina.</p>
+                </div>
+            </div>
+            <div class="system-item">
+                <img src="img/panel.PNG" alt="Panel Administrativo">
+                <div class="system-description">
+                    <h3>Panel Administrativo</h3>
+                    <p>Controla todos los aspectos del restaurante, desde el inventario hasta el análisis de ventas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits-section">
+        <h2>Impulsa tu negocio con Pallevar</h2>
+        <p class="benefits-intro">Nuestro sistema está diseñado para ayudarte a simplificar, crecer y transformar tu negocio de comida. Descubre cómo podemos hacer la diferencia.</p>
+        
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <div class="benefit-icon">💼</div>
+                <h3>Gestión Eficiente</h3>
+                <p>Optimiza tus operaciones diarias, reduce errores y mantén todo bajo control con un panel administrativo completo y fácil de usar.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">📈</div>
+                <h3>Incrementa Tus Ventas</h3>
+                <p>Atrae más clientes con un menú digital y mejora la experiencia del cliente desde el primer pedido.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">⏱️</div>
+                <h3>Ahorra Tiempo</h3>
+                <p>Automatiza la toma de pedidos, agiliza los tiempos de entrega y dedica más tiempo a lo que realmente importa.</p>
+            </div>
+    
+            <div class="benefit-item">
+                <div class="benefit-icon">💡</div>
+                <h3>Datos en Tiempo Real</h3>
+                <p>Obtén estadísticas detalladas y toma decisiones estratégicas para mejorar tus operaciones y ganancias.</p>
+            </div>
+        </div>
+    </section>
     
     
-<section class="pricing-section">
+<section class="pricing-section" id="precios">
     <h2>Planes y Precios</h2>
     <div class="pricing-container">
         <div class="plan-card">
@@ -165,15 +238,97 @@
     </div>
 </section>
 
-    
-    
-    
-    
+
+<section class="contact-section">
+    <div class="contact-content">
+        <h2>Contáctanos</h2>
+        <p class="contact-intro">Estamos listos para ayudarte a transformar tu negocio de comida. ¡Hablemos!</p>
         
-        
-        <!-- Contenido principal -->
-        <h1>Bienvenido a nuestra página</h1>
-        <p>Este es el contenido principal de la página.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Correo Electrónico</h3>
+                    <p>info@pallevar.me</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Teléfono</h3>
+                    <p>+52 123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Ubicación</h3>
+                    <p>Tijuana BC, México</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <h3>Envíanos un Mensaje</h3>
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="contact-button">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo de la marca -->
+        <div class="footer-logo">
+            <img src="img/logo2-pallevar-negro.PNG" alt="Logo de Pallevar" />
+        </div>
+
+        <!-- Columnas de contenido -->
+        <div class="footer-columns">
+            <!-- Columna de redes sociales -->
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de cumplimientos legales -->
+            <div class="footer-column">
+                <h4>Legales</h4>
+                <ul class="legal-links">
+                    <li><a href="#privacy">Política de Privacidad</a></li>
+                    <li><a href="#terms">Términos y Condiciones</a></li>
+                    <li><a href="#cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de otros links -->
+            <div class="footer-column">
+                <h4>Explora</h4>
+                <ul class="explore-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#pricing">Precios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Pallevar. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+ 
     </main>
 
     <script>

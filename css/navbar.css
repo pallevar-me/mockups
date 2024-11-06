@@ -1,3 +1,9 @@
+.c360-nav__header .logo img {
+    max-width: 250px; /* Ajusta el tamaño máximo según necesites */
+    height: auto;     /* Mantiene la proporción de la imagen */
+    display: block;
+    margin: 0 auto;   /* Centra la imagen dentro del contenedor */
+}
 .globalnav-wrapper-c360 {
     min-height: 56px;
 }
@@ -34,7 +40,7 @@ a {
 .c360-nav__header {
     display: flex;
     align-items: center; 
-    margin: 0 40px;
+    margin: 0 20px;
     height: 96px; 
 }
 
@@ -211,6 +217,7 @@ main {
     .dropdown2 {
         display: none;
     }
+
 }
 
 @media (max-width: 1279px) {
@@ -227,6 +234,9 @@ main {
         display: flex;
         right: 5%;
         position: fixed;
+    }
+    .c360-nav__header .logo img {
+        max-width: 150px;  
     }
 }
 

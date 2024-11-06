@@ -1,0 +1,129 @@
+/* Sección de contacto con diseño profesional */
+.contact-section {
+    background-color: #f8f9fa;
+    color: #1c2434;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Contenedor para la información y el formulario */
+.contact-container {
+    display: flex;
+    gap: 50px;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 320px;
+    text-align: left;
+}
+
+.contact-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 600px;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1c2434;
+    outline: none;
+}
+
+.contact-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #1c2434;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #333;
+}
+
+/* Responsividad para la sección de contacto */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+}
