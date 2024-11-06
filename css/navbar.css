@@ -69,7 +69,7 @@ a {
 .nav-links-1 a {
     font-size: 16px; 
     line-height: 28px;
-    font-family: 'ITC Avant Garde', sans-serif; /* Asegúrate de que esta fuente esté disponible */
+    font-family: "Archivo Black", sans-serif; /* Asegúrate de que esta fuente esté disponible */
     font-weight: normal;
     text-decoration: none;
     color: #1c2434; /* Color del texto normal */
@@ -79,8 +79,8 @@ a {
 }
 
 .nav-links-1 a:hover {
-    background-color: #ff784f; /* Fondo en hover */
-    color: #fff; /* Mantener el texto blanco en hover */
+    color: #1264a3; /* Fondo en hover */
+ /*   color: #fff;*/ /* Mantener el texto blanco en hover */
 }
 
 /* Estilos para el dropdown */
@@ -111,11 +111,13 @@ a {
     border: 1px solid #1c2434; /* Borde del botón */
     cursor: pointer; /* Cambiar cursor al pasar el mouse */
     transition: background-color 0.2s ease; /* Efecto de transición */
+    font-weight: bold;
 }
 
 .dropdown-button:hover {
-    background-color: #ff784f; /* Color de fondo al pasar el mouse */
+    background-color: #1c2434; /* Color de fondo al pasar el mouse */
     color: #fff; /* Cambiar el color del texto al pasar el mouse */
+    font-weight: bold;
 }
 
 
@@ -145,7 +147,7 @@ a {
 
 .dropdown a:hover {
     background-color: #f0f0f0; /* Fondo en hover */
-    color: #ff784f; /* Color del texto en hover */
+    color: #1264a3; /* Color del texto en hover */
 }
 
 .burger-menu {
@@ -192,14 +194,14 @@ a {
 .sidebar ul li a {
     font-size: 24px;
     line-height: 32px;
-    font-family: 'ITC Avant Garde', sans-serif; /* Asegúrate de que esta fuente esté disponible */
+    font-family: "Archivo Black", sans-serif; /* Asegúrate de que esta fuente esté disponible */
     font-weight: normal;
     text-decoration: none;
     color: #1c2434; 
 }
 
 .sidebar ul li a:hover {
-    color: #ff784f; 
+    color: #1264a3; 
 }
 
 main {
@@ -245,12 +247,21 @@ main {
 
 
 .dropdown-button2 {
+    background-color: #1c2434;  /* Fondo oscuro por defecto */
+    color: #fff;  /* Texto blanco por defecto */
     padding: 10px 20px;
-    background-color: #1c2434;
-    color: white;
-    border: none;
+    border-radius: 5px;
+    border: 1px solid #fff;  /* Borde blanco */
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;  /* Incluir la transición para color también */
+    font-weight: bold;
+}
+
+.dropdown-button2:hover {
+    background-color: #fff;  /* Fondo blanco en hover */
+    color: #1c2434;  /* Texto oscuro en hover */
+    border: 1px solid #000; 
+    font-weight: bold;
 }
 .dropdown-content2 {
     display: none;
