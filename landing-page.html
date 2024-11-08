@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+
+            /*
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: normal; /* Puedes ajustarlo a tu preferencia */
+            font-style: normal;
+        }
+
+        /*hero section*/
+/* General Styling for the Hero Section */
+
+        /*hero section*/
+        .system-item img {
+            border-bottom: none !important;
+        }
+        .hero-image {
+            margin-top: 70px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/system.css">
+    <link rel="stylesheet" href="css/beneficios.css">
+    <link rel="stylesheet" href="css/precios.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="globalnav-wrapper-c360">
+        <a class="screen-reader-text skip-to-content-c360" href="#main-content">
+            <div class="screen-reader-container">Saltarse al contenido</div>
+        </a>
+        
+        <nav class="c360-nav">
+            <div class="c360-nav__header">
+                <div class="burger-menu" id="burger-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="logo">
+                    <img src="img/logo2-pallevar.PNG" alt="Panel Administrativo">
+                </div>
+                <ul class="nav-links-1">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li> 
+                        <button class="dropdown-button" id="login-dropdown">Inicio Sesión</button>
+                        <div class="dropdown">
+                            <a href="#login">Panel</a>
+                            <a href="#register">Comanda</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="dropdown2">
+                    <button class="dropdown-button2" id="dropdownButton2">Inicio Sesion</button>
+                    <div class="dropdown-content2" id="dropdownContent2">
+                        <a href="#login">Panel</a>
+                        <a href="#register">Comanda</a>
+                    </div>
+                </div>
+                <button class="dropdown-button2 trial">Prueba Gratis</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Acerca de</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <button class="dropdown-button">Prueba Gratis</button>
+        </ul>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Contenedor de texto -->
+                <div class="col-md-6 hero-content">
+                    <h1>Transforma tu restaurante con pedidos en línea sencillos y eficientes</h1>
+                    <p>Optimiza cada aspecto de tu servicio: gestiona pedidos, conecta con tus clientes y aumenta tus ingresos sin intermediarios. Todo desde una sola plataforma y sin complicaciones.</p>
+                    
+                    <!-- Botones debajo del párrafo -->
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary">Comenzar Ahora</a>
+                        <a href="#precios" class="btn btn-secondary">Ver Precios</a>
+                    </div>
+                </div>
+                <!-- Contenedor de imagen -->
+                <div class="col-md-6">
+                    <img src="img/6.PNG" alt="Descripción de la imagen" class="hero-image img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section class="system-section" id="services">
+        <h2>Nuestro Ecosistema</h2>
+        <div class="system-container">
+            <div class="system-item">
+                <img src="img/3.png" alt="Menu interactivo">
+            </div>
+            <div class="system-item">
+                <img src="img/4.PNG" alt="Comanda digital">
+            </div>
+            <div class="system-item">
+                <img src="img/5.PNG" alt="Panel Administrativo">
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits-section">
+        <h2>Impulsa tu negocio con Pallevar</h2>
+        <p class="benefits-intro">Nuestro sistema está diseñado para ayudarte a simplificar, crecer y transformar tu negocio de comida. Descubre cómo podemos hacer la diferencia.</p>
+        
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <div class="benefit-icon">💼</div>
+                <h3>Gestión Eficiente</h3>
+                <p>Optimiza tus operaciones diarias, reduce errores y mantén todo bajo control con un panel administrativo completo y fácil de usar.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">📈</div>
+                <h3>Incrementa Tus Ventas</h3>
+                <p>Atrae más clientes con un menú digital y mejora la experiencia del cliente desde el primer pedido.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">⏱️</div>
+                <h3>Ahorra Tiempo</h3>
+                <p>Automatiza la toma de pedidos, agiliza los tiempos de entrega y dedica más tiempo a lo que realmente importa.</p>
+            </div>
+    
+            <div class="benefit-item">
+                <div class="benefit-icon">💡</div>
+                <h3>Datos en Tiempo Real</h3>
+                <p>Obtén estadísticas detalladas y toma decisiones estratégicas para mejorar tus operaciones y ganancias.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+<section class="pricing-section" id="precios">
+    <h2>Planes y Precios</h2>
+    <div class="pricing-container">
+        <div class="plan-card">
+            <h5>Basico</h5>
+            <p class="card-price">
+                $499   <span class="billing-period">x Mes</span>
+            </p>
+            <button class="btn btn-primary">Iniciar Prueba</button>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Gestión de Pedidos</li>
+                <li><i class="fas fa-check-circle"></i> Panel Administrativo</li>
+                <li><i class="fas fa-check-circle"></i> Menú Interactivo</li>
+                <li><i class="fas fa-check-circle"></i> Soporte por Email</li>
+                <li><i class="fas fa-check-circle"></i> Reportes Semanales</li>
+                <li><i class="fas fa-check-circle"></i> Productos Limitados</li>
+                <li><i class="fas fa-check-circle"></i> Acceso a 1 Usuario</li>
+                <li><i class="fas fa-check-circle"></i> Prueba Gratuita de 3 Meses</li>
+                <li><i class="fas fa-check-circle"></i> Comanda Digital</li>
+                <li><i class="fas fa-check-circle"></i> SMS al Cliente</li>
+                <li><i class="fas fa-check-circle"></i> 1 Usuario Administrativo</li>
+                <li><i class="fas fa-check-circle"></i> 1 Menú por Restaurante</li>
+            </ul>
+            
+
+        </div>
+        <div class="plan-card">
+            <h5>Professional</h5>
+            <p class="card-price">
+                $999   <span class="billing-period">x Mes</span>
+            </p>
+            <button class="btn btn-primary">Iniciar Prueba</button>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+ 
+        </div>
+        <div class="plan-card">
+            <h5>Premium</h5>
+            <p class="card-price">
+                $1,499   <span class="billing-period">x Mes</span>
+            </p>
+            <button class="btn btn-primary">Iniciar Prueba</button>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+
+        </div>
+        <div class="plan-card">
+            <h5>Enterprise</h5>
+            <p class="card-price">
+                $1,999   <span class="billing-period">x Mes</span>
+            </p>
+            <button class="btn btn-primary">Iniciar Prueba</button>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+ 
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section">
+    <div class="contact-content">
+        <h2>Contáctanos</h2>
+        <p class="contact-intro">Estamos listos para ayudarte a transformar tu negocio de comida. ¡Hablemos!</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Correo Electrónico</h3>
+                    <p>info@pallevar.me</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Teléfono</h3>
+                    <p>+52 123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Ubicación</h3>
+                    <p>Tijuana BC, México</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <h3>Envíanos un Mensaje</h3>
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="contact-button">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo de la marca -->
+        <div class="footer-logo">
+            <img src="img/logo2-pallevar-negro.PNG" alt="Logo de Pallevar" />
+        </div>
+
+        <!-- Columnas de contenido -->
+        <div class="footer-columns">
+            <!-- Columna de redes sociales -->
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de cumplimientos legales -->
+            <div class="footer-column">
+                <h4>Legales</h4>
+                <ul class="legal-links">
+                    <li><a href="#privacy">Política de Privacidad</a></li>
+                    <li><a href="#terms">Términos y Condiciones</a></li>
+                    <li><a href="#cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de otros links -->
+            <div class="footer-column">
+                <h4>Explora</h4>
+                <ul class="explore-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#pricing">Precios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Pallevar. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+ 
+    </main>
+
+    <script>
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        });
+
+        document.getElementById('login-dropdown').addEventListener('click', function() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Cerrar el dropdown si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.dropdown');
+            const button = document.getElementById('login-dropdown');
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        const dropdownButton = document.getElementById('dropdownButton2');
+        const dropdownContent = document.getElementById('dropdownContent2');
+
+        dropdownButton.addEventListener('click', () => {
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Cierra el dropdown si se hace clic fuera de él
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.dropdown-button2')) {
+                if (dropdownContent.classList.contains('show')) {
+                    dropdownContent.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
