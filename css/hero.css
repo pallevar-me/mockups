@@ -1,9 +1,9 @@
 /* Estilos para la sección principal */
 .hero {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+/*    background: linear-gradient(135deg, #f8f9fa, #e9ecef);*/
+ /*   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 8px; */
 }
 
 /* Contenedor principal */
@@ -53,28 +53,36 @@
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
+p{
+    font-size: 20px;
+    letter-spacing: -.0012em;
+    line-height: 30px;
+}
 /* Estilo para el botón primario */
 .btn-primary {
-    background-color: #ff784f;
+    background-color: #0176d3;
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: #ff5722;
+    background-color: #032d60;
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background-color: #5c6bc0;
-    color: white;
+    background-color: white;
+    color: #0176d3;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #0176d3;
 }
 
 .btn-secondary:hover {
-    background-color: #3f51b5;
+    background-color: #eaf5fe;
     transform: translateY(-2px);
+    border: 2px solid #032d60;
+    border-color: #032d60;
+    color: #032d60;
 }
 
 /* Estilo para la imagen */
