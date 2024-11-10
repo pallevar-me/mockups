@@ -59,12 +59,22 @@
         .hero-image {
             margin-top: 70px;
         }
+        .sidebar {
+            transform: translateX(-100%); /* La barra lateral está oculta fuera de la pantalla */
+            transition: transform 0.3s ease; /* Animación suave para abrir y cerrar */
+        }
 
+        /* Estilo para la barra lateral visible */
+        .sidebar.active {
+            transform: translateX(0); /* La barra lateral se desliza dentro de la pantalla */
+        }
     </style>
+    
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/system.css">
     <link rel="stylesheet" href="css/beneficios.css">
+    <link rel="stylesheet" href="css/clientes.css">
     <link rel="stylesheet" href="css/precios.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -92,7 +102,7 @@
                     <li><a href="#precios">Precios</a></li>
                     <li><a href="#contact">Contacto</a></li>
                     <li> 
-                        <button class="dropdown-button" id="login-dropdown">Inicio Sesión</button>
+                        <button class="dropdown-button" id="login-dropdown">Iniciar sesión</button>
                         <div class="dropdown">
                             <a href="#login">Panel</a>
                             <a href="#register">Comanda</a>
@@ -101,13 +111,13 @@
                 </ul>
 
                 <div class="dropdown2">
-                    <button class="dropdown-button2" id="dropdownButton2">Inicio Sesion</button>
+                    <button class="dropdown-button2" id="dropdownButton2">Iniciar sesión</button>
                     <div class="dropdown-content2" id="dropdownContent2">
                         <a href="#login">Panel</a>
                         <a href="#register">Comanda</a>
                     </div>
                 </div>
-                <button class="dropdown-button2 trial">Prueba Gratis</button>
+                <button class="dropdown-button2 trial">Empezar gratis</button>
             </div>
         </nav>
     </div>
@@ -119,7 +129,7 @@
             <li><a href="#services">Servicios</a></li>
             <li><a href="#precios">Precios</a></li>
             <li><a href="#contact">Contacto</a></li>
-            <button class="dropdown-button">Prueba Gratis</button>
+            <button class="dropdown-button">Empezar gratis</button>
         </ul>
     </div>
 
@@ -203,7 +213,20 @@
         </div>
     </section>
     
-    
+    <!-- Sección de Clientes -->
+<section class="clients-section">
+    <h2>Clientes</h2>
+    <div class="clients-container">
+        <div class="client-logo"><img src="https://ragaurbancafe.com/wp-content/uploads/2023/06/Asset-3-8csss7a.png" alt="Raga Urban Cafe"></div>
+        <div class="client-logo"><img src="https://burraburger.com/wp-content/uploads/2023/11/Logo-Burra-Home.png" alt="Burra Burger"></div>
+        <div class="client-logo"><img src="https://houseofribs.mobi/assets/slideshow/01.jpg" alt="House of Ribs"></div>
+        <div class="client-logo"><img src="img/chi2.jpg" alt="Chi2"></div>
+        <div class="client-logo"><img src="img/22.jpg" alt="Carreta 22"></div>
+        <!-- Agregar más logos según sea necesario -->
+    </div>
+</section>
+
+
 <section class="pricing-section" id="precios">
     <h2>Planes y Precios</h2>
     <div class="pricing-container">
@@ -275,41 +298,77 @@
 
 <section class="contact-section">
     <div class="contact-content">
-        <h2>Contáctanos</h2>
-        <p class="contact-intro">Estamos listos para ayudarte a transformar tu negocio de comida. ¡Hablemos!</p>
-        
+        <div class="contact-header">
+            <h2>Contáctanos</h2>
+            <p class="contact-intro">Estamos listos para ayudarte a transformar tu negocio de comida. ¡Hablemos!</p>
+        </div>
+
         <div class="contact-container">
+            
+            <!-- Información de contacto -->
             <div class="contact-info">
                 <div class="contact-item">
-                    <h3>Correo Electrónico</h3>
-                    <p>info@pallevar.me</p>
+                    <h3>Oficina Principal</h3>
+                    <p>938 Mayfair Street<br>Athens, GA 30605</p>
+                    <a href="tel:+24444561256" class="contact-call">+2 444 456 1256</a>
+                    <a href="mailto:info@gmail.com" class="contact-email">info@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <h3>Teléfono</h3>
-                    <p>+52 123 456 7890</p>
+                    <h3>Ayuda y Soporte</h3>
+                    <p>Estamos aquí para ayudarte con cualquier pregunta.</p>
+                    <a href="#" class="contact-call">Obtener soporte</a>
                 </div>
                 <div class="contact-item">
-                    <h3>Ubicación</h3>
-                    <p>Tijuana BC, México</p>
+                    <h3>Comunidad</h3>
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/" target="_blank" class="contact-social-item">
+                            <img src="https://cdn.prod.website-files.com/647444d4107043aab0cb4c7b/6478cf65be46106da2284a98_facebook.svg" alt="Facebook">
+                            <div>Facebook</div>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank" class="contact-social-item">
+                            <img src="https://cdn.prod.website-files.com/647444d4107043aab0cb4c7b/6478cf65be46106da2284a99_twitter.svg" alt="Twitter">
+                            <div>Twitter</div>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="contact-social-item">
+                            <img src="https://cdn.prod.website-files.com/647444d4107043aab0cb4c7b/6478cf65be46106da2284a9b_instagram-dark.svg" alt="Instagram">
+                            <div>Instagram</div>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="contact-social-item">
+                            <img src="https://cdn.prod.website-files.com/647444d4107043aab0cb4c7b/6478cf65be46106da2284a9a_linkedin.svg" alt="Linkedin">
+                            <div>Linkedin</div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <form class="contact-form">
-                <h3>Envíanos un Mensaje</h3>
-                <label for="name">Nombre Completo</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit" class="contact-button">Enviar Mensaje</button>
-            </form>
+            <!-- Formulario de contacto -->
+            <div class="contact-form">
+                <h5>Envíanos un mensaje</h5>
+                <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" method="get">
+                    <div class="field-group">
+                        <label for="name">Nombre</label>
+                        <input class="field-input" name="name" type="text" id="name">
+                    </div>
+                    <div class="field-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input class="field-input" name="email" type="email" id="email" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="subject">Asunto</label>
+                        <input class="field-input" name="subject" type="text" id="subject">
+                    </div>
+                    <div class="field-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <input type="submit" class="contact-button" value="Enviar">
+                </form>
+            </div>
         </div>
     </div>
 </section>
+
+
 
 
 <footer class="footer">
@@ -365,12 +424,9 @@
  
     </main>
 
+    <script src="js/app.js"></script>
     <script>
-        document.getElementById('burger-menu').addEventListener('click', function() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
-        });
-
+         
         document.getElementById('login-dropdown').addEventListener('click', function() {
             const dropdown = document.querySelector('.dropdown');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';

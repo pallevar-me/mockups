@@ -1,0 +1,71 @@
+/* Estilos generales para la sección de clientes */
+.clients-section {
+    background-color: #f7f9fc; /* Fondo sutilmente gris para resaltar */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.clients-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Contenedor de la cuadrícula para los logos */
+.clients-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para los logos */
+.client-logo {
+    background-color: #ffffff;
+    border-radius: 12px; /* Borde más redondeado */
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
+
+.client-logo:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Efecto sutil al pasar el mouse */
+    transform: translateY(-5px);
+}
+
+.client-logo img {
+    max-width: 90%;
+    max-height: 60px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.client-logo:hover img {
+    opacity: 1; /* Aumenta la visibilidad del logo al pasar el mouse */
+}
+
+/* Responsividad para la cuadrícula de logos */
+@media (max-width: 992px) {
+    .clients-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .clients-container {
+        grid-template-columns: 1fr;
+    }
+
+    .client-logo {
+        padding: 15px;
+        height: 80px;
+    }
+}
