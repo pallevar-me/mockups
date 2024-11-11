@@ -114,6 +114,7 @@
     font-size: 1rem;
     color: #fff;
     background-color: #1c2434;
+    box-sizing: border-box;
 }
 
 .contact-form input:focus,
@@ -171,3 +172,21 @@
 .contact-call, .contact-email {
     display: block;
 }
+
+@media screen and (max-width: 479px) {
+    .contact-form {
+        padding: 30px 40px 0px 30px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px; /* Reducir el padding en dispositivos pequeños */
+        font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
+    }
+
+    .contact-button {
+        padding: 10px;
+        font-size: 1rem; /* Ajustar el tamaño del botón */
+    }
+}
+ 

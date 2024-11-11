@@ -86,8 +86,27 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            max-width: 800px; /* Ancho máximo para el grid */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 0 20px; /* Espaciado en los márgenes laterales */
         }
+        @media (max-width: 600px) {
+    .menu.active {
+        grid-template-columns: 1fr;
+    }
+}
 
+@media (min-width: 601px) and (max-width: 1024px) {
+    .menu.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .menu.active {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
         .menu-item {
             background-color: white;
             padding: 20px;
@@ -222,6 +241,30 @@
     </div>
 
     <section id="food" class="menu active">
+        <div class="menu-item">
+            <img src="img/chila.PNG" alt="Pizza Margherita">
+            <h3>Pizza Margherita</h3>
+            <p>Ingredientes: Tomate, mozzarella, albahaca.</p>
+            <span>$150 MXN</span>
+            <button onclick="addToCart('Pizza Margherita')">Agregar al carrito</button>
+            <button onclick="openModal('Pizza Margherita', 'Ingredientes: Tomate, mozzarella, albahaca. Precio: $150 MXN')">Ver detalle</button>
+        </div>
+        <div class="menu-item">
+            <img src="img/burger-2.PNG" alt="Ensalada César">
+            <h3>Ensalada César</h3>
+            <p>Ingredientes: Lechuga, crutones, aderezo César.</p>
+            <span>$100 MXN</span>
+            <button onclick="addToCart('Ensalada César')">Agregar al carrito</button>
+            <button onclick="openModal('Ensalada César', 'Ingredientes: Lechuga, crutones, aderezo César. Precio: $100 MXN')">Ver detalle</button>
+        </div>
+        <div class="menu-item">
+            <img src="img/burger-2.PNG" alt="Taco de Pollo">
+            <h3>Taco de Pollo</h3>
+            <p>Ingredientes: Tortilla de maíz, pollo, cebolla.</p>
+            <span>$50 MXN</span>
+            <button onclick="addToCart('Taco de Pollo')">Agregar al carrito</button>
+            <button onclick="openModal('Taco de Pollo', 'Ingredientes: Tortilla de maíz, pollo, cebolla. Precio: $50 MXN')">Ver detalle</button>
+        </div>
         <div class="menu-item">
             <img src="img/chila.PNG" alt="Pizza Margherita">
             <h3>Pizza Margherita</h3>
