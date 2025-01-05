@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itinerario Londres</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .header-1 {
+      background-color: #1c2434;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    .header-2 {
+    /*  background-color: #1c2434;*/
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+    .selected{
+        background-color: #007BFF;
+    }
+    nav {
+      background-color: #1c2434;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: #007BFF;
+    }
+    .container {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      color: #1c2434;
+    }
+
+    .day-section {
+      margin-bottom: 2rem;
+    }
+
+    .location-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .location-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .location-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .location-card p {
+      margin: 0.5rem 0;
+      color: #555;
+    }
+
+    .location-card a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #1c2434;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-1">
+    <nav>
+        <a class="selected" href="#">Londres</a>
+        <a href="#">Paris</a>
+        <a href="#">Roma</a>
+      </nav>
+  </header>
+  <nav>
+    <nav>
+        <a  class="selected" href="index.html">Día 1</a>
+        <a href="dia2.html">Día 2</a>
+        <a href="dia3.html">Día 3</a>
+      </nav>
+  </nav>
+  <div class="container">
+    <!-- Día 1 -->
+    <section id="day1" class="day-section">
+        <div class="header-2">
+            <h2><p>Día 1 Mañana  - Londres Histórico</p></h2>
+        </div>
+      
+      <div class="location-card">
+        <img src="img/londres/tower-of-london-white.jpg" alt="Torre de Londres">
+        <h3>Torre de Londres</h3>
+        <p>Horario: 9:00 AM - 11:00 AM</p>
+        <p>Explora las Joyas de la Corona y la historia medieval en este castillo icónico.</p>
+        <a href="https://www.google.com/maps?q=51.5081,-0.0759" target="_blank">Ver en Google Maps</a>
+      </div>
+
+      <div class="location-card">
+        <img src="img/londres/tower-bridge.jpg" alt="Tower Bridge">
+        <h3>Tower Bridge</h3>
+        <p>Horario: 11:15 AM - 12:00 PM</p>
+        <p>Camina por este puente emblemático y disfruta de las vistas.</p>
+        <a href="https://www.google.com/maps?q=51.5055,-0.0754" target="_blank">Ver en Google Maps</a>
+      </div>
+    </section>
+
+    <section class="day-section">
+        <h2>Día 1  Tarde - Londres Histórico</h2>
+        <div class="location-card">
+          <img src="img/londres/borough-market.jpg" alt="Torre de Londres">
+          <h3>Borough Market</h3>
+          <p>Horario: 12:00 PM - 01:00 PM</p>
+          <p>Almuerzo en Borough Market, un mercado gastronómico famoso con muchas opciones locales e internacionales.</p>
+          <a href="https://www.google.com/maps?q=51.5081,-0.0759" target="_blank">Ver en Google Maps</a>
+        </div>
+  
+        <div class="location-card">
+          <img src="img/londres/abadía-de-westminster.jpg" alt="Tower Bridge">
+          <h3>Abadía de Westminster</h3>
+          <p>Horario: 01:00 PM - 2:30 PM</p>
+          <p>Visita este lugar histórico de coronaciones y bodas reales.</p>
+          <a href="https://www.google.com/maps?q=51.5055,-0.0754" target="_blank">Ver en Google Maps</a>
+        </div>
+
+        <div class="location-card">
+            <img src="img/londres/big-ben.jpg" alt="Tower Bridge">
+            <h3>Big Ben</h3>
+            <p>Horario: 01:00 PM - 2:30 PM</p>
+            <p>Visita este lugar histórico de coronaciones y bodas reales.</p>
+            <a href="https://www.google.com/maps?q=51.5055,-0.0754" target="_blank">Ver en Google Maps</a>
+          </div>
+
+          <div class="location-card">
+            <img src="img/londres/houses-of-parliament-tour-3.webp" alt="Tower Bridge">
+            <h3>Casas del Parlamento</h3>
+            <p>Horario: 01:00 PM - 2:30 PM</p>
+            <p>Visita este lugar histórico de coronaciones y bodas reales.</p>
+            <a href="https://www.google.com/maps?q=51.5055,-0.0754" target="_blank">Ver en Google Maps</a>
+          </div>
+
+        <div class="location-card">
+            <img src="img/londres/covent-garden.jpg" alt="Tower Bridge">
+            <h3>Covent Garden</h3>
+            <p>Horario: 01:00 PM - 2:30 PM</p>
+            <p>Cena cerca de Covent Garden y explora sus calles animadas y artistas callejeros.</p>
+            <a href="https://www.google.com/maps?q=51.5055,-0.0754" target="_blank">Ver en Google Maps</a>
+          </div>
+      </section>
+  </div>
+
+  <footer>
+    <p>Itinerario creado para tu viaje a Londres</p>
+  </footer>
+</body>
+</html>
