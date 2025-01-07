@@ -4,124 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Itinerario Paris</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-
-    .header-1 {
-      background-color: #1c2434;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    .header-2 {
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-    .selected{
-        background-color: #007BFF;
-    }
-    nav {
-      background-color: #1c2434;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    nav a:hover {
-      background-color: #007BFF;
-    }
-
-    .container {
-      padding: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      color: #1c2434;
-    }
-
-    .day-section {
-      margin-bottom: 2rem;
-    }
-
-    .location-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-      padding: 1rem;
-      overflow: hidden;
-    }
-
-    .location-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .location-card h3 {
-      margin: 0.5rem 0;
-    }
-
-    .location-card p {
-      margin: 0.5rem 0;
-      color: #555;
-    }
-
-    .location-card a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    .navigation-links {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      border-top: 1px solid #ddd;
-    }
-
-    .navigation-links a {
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .navigation-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      background: #1c2434;
-      color: white;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header-1">
@@ -147,25 +30,47 @@
         <h3>Museo del Louvre </h3>
         <p>Horario: (3 horas):</p>
         <p> Dedica tiempo a las obras más famosas, como la Mona Lisa y la Venus de Milo. Reserva entrada anticipada para evitar filas.</p>
-        <a href="https://www.google.com/maps?q=51.5321,-0.1773" target="_blank">Ver en Google Maps</a>
+        <a href="https://maps.app.goo.gl/sK6JqgrNZmsaRJub6" target="_blank">Ver en Google Maps</a>
       </div>
-
+      <div class="location-card">
+        <img src="img/paris/jardin-de-las-tullerias-y-louvre-en-otono.webp" alt="Museo Británico">
+        <h3>Jardines de las Tullerías </h3>
+        <p>Horario: 30 min</p>
+        <p>Pasea por este parque junto al Louvre..</p>
+        <a href="https://maps.app.goo.gl/84aTz3AnyXHKPCGBA" target="_blank">Ver en Google Maps</a>
+      </div>
       <h2>Día 5 - Mediodía</h2>
       <div class="location-card">
         <img src="img/paris/caption.jpg" alt="Museo Británico">
         <h3>Almuerzo cerca de Palais Royal</h3>
         <p>Horario: ?</p>
         <p>Encuentra bistrós o restaurantes en esta zona tranquila y céntrica.</p>
-        <a href="https://www.google.com/maps?q=51.5194,-0.127" target="_blank">Ver en Google Maps</a>
+        <a href="https://maps.app.goo.gl/1i2JX3g2HVVtY4QR6" target="_blank">Ver en Google Maps</a>
+      </div>
+
+      <div class="location-card">
+        <img src="img/paris/visitar-barrio-latino.jpg" alt="Museo Británico">
+        <h3>Barrio Latino</h3>
+        <p>Horario: 1 hora</p>
+        <p>Explora sus calles bohemias, cafés y librerías como Shakespeare and Companyy.</p>
+        <a href="https://maps.app.goo.gl/DtVM7pDhPuKnvkd98" target="_blank">Ver en Google Maps</a>
       </div>
 
       <h2>Día 5 - Tarde Île de la Cité</h2>
       <div class="location-card">
+        <img src="img/paris/luxembourg.jpg" alt="Museo Británico">
+        <h3>Jardín de Luxemburgo</h3>
+        <p>Horario: 1 hora</p>
+        <p>Relájate en estos preciosos jardines, rodeados de estatuas y fuentes.</p>
+        <a href="https://maps.app.goo.gl/voyc2acE3f5Ysb9D7" target="_blank">Ver en Google Maps</a>
+      </div>
+
+      <div class="location-card">
         <img src="img/paris/60267.webp" alt="Museo Británico">
         <h3>Catedral de Notre Dame</h3>
-        <p>Horario: 1 hora</p>
+        <p>Horario: 30  min</p>
         <p>Admira su fachada mientras continúa en restauración.</p>
-        <a href="https://www.google.com/maps?q=51.5194,-0.127" target="_blank">Ver en Google Maps</a>
+        <a href="https://maps.app.goo.gl/KWjds15dJzJVAXcL9" target="_blank">Ver en Google Maps</a>
       </div>
 
       <div class="location-card">
@@ -173,7 +78,7 @@
         <h3>Sainte-Chapelle</h3>
         <p>Horario: 1 horaa</p>
         <p>Visita esta joya gótica famosa por sus impresionantes vitrales.</p>
-        <a href="https://www.google.com/maps?q=51.5194,-0.127" target="_blank">Ver en Google Maps</a>
+        <a href="https://maps.app.goo.gl/5GFcqUDeHZqUN3zn7" target="_blank">Ver en Google Maps</a>
       </div>
       
       <h2>Día 4 - Noche</h2>
@@ -182,7 +87,7 @@
         <h3>Montmartre y Basílica del Sacré-Cœur</h3>
         <p>Horario: ?</p>
         <p>Sube a la colina para ver París desde arriba y pasea por la Plaza du Tertre. Cena en un restaurante local.</p>
-        <a href="https://www.google.com/maps?q=51.5194,-0.127" target="_blank">Ver en Google Maps</a>
+        <a href="https://maps.app.goo.gl/6xQLHNKanfkqqUMM6" target="_blank">Ver en Google Maps</a>
       </div>
     </section>
 
@@ -193,7 +98,7 @@
   </div>
 
   <footer>
-    <p>Itinerario creado para tu viaje a Londres</p>
+    <p>Itinerario creado para tu viaje a Paris</p>
   </footer>
 </body>
 </html>
