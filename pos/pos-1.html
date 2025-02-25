@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Venta - POS</title>
+  <style>/* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f4f4f9;
+      color: #1c2434;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1c2434;
+      color: white;
+    }
+    
+    .logout-btn {
+      background-color: #ff4d4f;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Main */
+    .main {
+      display: flex;
+      padding: 20px;
+    }
+    
+    /* Menú de Productos */
+    .menu-section {
+      flex: 2;
+      margin-right: 20px;
+    }
+    
+    .menu-section h2 {
+      margin-bottom: 10px;
+    }
+    
+    .product-categories {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .category-btn {
+      flex: 1;
+      margin-right: 10px;
+      padding: 10px;
+      background-color: #1c2434;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .category-btn.active {
+      background-color: #3a4a64;
+    }
+    
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .product-card {
+      width: calc(33.33% - 20px);
+      background-color: #f9fafb;
+      padding: 10px;
+      border: 1px solid #e4e4e4;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .add-btn {
+      background-color: #1c2434;
+      color: #ffffff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Carrito */
+    .cart-section {
+      flex: 1;
+      padding: 20px;
+      background-color: #f9fafb;
+      border: 1px solid #e4e4e4;
+      border-radius: 5px;
+    }
+    
+    .cart-section h2 {
+      margin-bottom: 10px;
+    }
+    
+    .cart-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .cart-summary {
+      margin-bottom: 20px;
+    }
+    
+    .discount-btn,
+    .finalize-btn {
+      background-color: #1c2434;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    .payment-methods {
+      margin-bottom: 20px;
+    }
+    
+    .payment-btn {
+      margin-right: 10px;
+      background-color: #1c2434;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>POS - Registro de Venta</h1>
+      <button class="logout-btn">Cerrar Sesión</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Menú de Productos -->
+      <section class="menu-section">
+        <h2>Menú de Productos</h2>
+        <div class="product-categories">
+          <button class="category-btn active">Comidas</button>
+          <button class="category-btn">Bebidas</button>
+          <button class="category-btn">Postres</button>
+        </div>
+        <div class="product-list">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="Producto">
+            <p>Producto 1</p>
+            <button class="add-btn">Agregar</button>
+          </div>
+          <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="Producto">
+            <p>Producto 2</p>
+            <button class="add-btn">Agregar</button>
+          </div>
+          <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="Producto">
+            <p>Producto 3</p>
+            <button class="add-btn">Agregar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Carrito de Compras -->
+      <aside class="cart-section">
+        <h2>Carrito</h2>
+        <ul class="cart-list">
+          <li class="cart-item">
+            Producto 1 - $100 
+            <input type="number" value="1" min="1">
+            <button class="remove-btn">Eliminar</button>
+          </li>
+          <li class="cart-item">
+            Producto 2 - $50 
+            <input type="number" value="2" min="1">
+            <button class="remove-btn">Eliminar</button>
+          </li>
+        </ul>
+        <div class="cart-summary">
+          <p>Total: $200</p>
+          <button class="discount-btn">Aplicar Descuento</button>
+        </div>
+        <div class="payment-methods">
+          <h3>Método de Pago</h3>
+          <button class="payment-btn">Efectivo</button>
+          <button class="payment-btn">Tarjeta</button>
+          <button class="payment-btn">Transferencia</button>
+        </div>
+        <button class="finalize-btn">Finalizar Venta</button>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Pallevar. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Inventarios</title>
+  <style>/* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      color: #1c2434;
+    }
+    
+    /* Inventario */
+    .inventory {
+      margin-bottom: 20px;
+    }
+    
+    .inventory h2 {
+      margin-bottom: 10px;
+      color: #1c2434;
+    }
+    
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    
+    .inventory-table th, 
+    .inventory-table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    
+    .inventory-table th {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    
+    .adjust-btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .add-btn {
+      background-color: #4caf50;
+      color: #fff;
+    }
+    
+    .add-btn:hover {
+      background-color: #388e3c;
+    }
+    
+    .remove-btn {
+      background-color: #f44336;
+      color: #fff;
+    }
+    
+    .remove-btn:hover {
+      background-color: #d32f2f;
+    }
+    
+    .remove-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+    /* Estado del Stock */
+    .status {
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: bold;
+      display: inline-block;
+    }
+    
+    .status.normal {
+      background-color: #4caf50;
+    }
+    
+    .status.low {
+      background-color: #ff9800;
+    }
+    
+    .status.out {
+      background-color: #f44336;
+    }
+    
+    /* Alertas */
+    .alerts {
+      margin-top: 20px;
+    }
+    
+    .alert-message {
+      background-color: #ffeb3b;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #333;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Gestión de Inventarios</h1>
+    </header>
+
+    <!-- Lista de Productos -->
+    <section class="inventory">
+      <h2>Inventario Actual</h2>
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Stock Actual</th>
+            <th>Ajustes</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Producto con stock normal -->
+          <tr>
+            <td>Producto A</td>
+            <td>50</td>
+            <td>
+              <button class="adjust-btn add-btn">Añadir</button>
+              <button class="adjust-btn remove-btn">Quitar</button>
+            </td>
+            <td><span class="status normal">En Stock</span></td>
+          </tr>
+          <!-- Producto con bajo stock -->
+          <tr>
+            <td>Producto B</td>
+            <td>5</td>
+            <td>
+              <button class="adjust-btn add-btn">Añadir</button>
+              <button class="adjust-btn remove-btn">Quitar</button>
+            </td>
+            <td><span class="status low">Bajo Stock</span></td>
+          </tr>
+          <!-- Producto agotado -->
+          <tr>
+            <td>Producto C</td>
+            <td>0</td>
+            <td>
+              <button class="adjust-btn add-btn">Añadir</button>
+              <button class="adjust-btn remove-btn" disabled>Quitar</button>
+            </td>
+            <td><span class="status out">Agotado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Botón de Alerta -->
+    <section class="alerts">
+      <h2>Alertas</h2>
+      <p class="alert-message">⚠️ Los siguientes productos tienen bajo stock: Producto B.</p>
+    </section>
+  </div>
+</body>
+</html>

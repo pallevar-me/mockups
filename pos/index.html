@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla Inicio POS</title>
+  <style>/* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f4f4f9;
+      color: #1c2434;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e4e4e4;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 24px;
+    }
+    
+    .logout-btn {
+      background-color: #1c2434;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .logout-btn:hover {
+      background-color: #303c54;
+    }
+    
+    /* Summary Section */
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .summary-card {
+      flex: 1;
+      margin: 0 10px;
+      background-color: #f9fafb;
+      border: 1px solid #e4e4e4;
+      border-radius: 8px;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .summary-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #4a4a4a;
+    }
+    
+    .summary-card p {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1c2434;
+    }
+    
+    /* Quick Actions */
+    .quick-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .action-btn {
+      flex: 1;
+      margin: 0 10px;
+      background-color: #1c2434;
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .action-btn:hover {
+      background-color: #303c54;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #7a7a7a;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>POS - Pallevar</h1>
+      <button class="logout-btn">Cerrar Sesión</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Summary Section -->
+      <section class="summary">
+        <div class="summary-card">
+          <h3>Ventas Totales</h3>
+          <p>$12,350</p>
+        </div>
+        <div class="summary-card">
+          <h3>Pedidos Hoy</h3>
+          <p>45</p>
+        </div>
+        <div class="summary-card">
+          <h3>Efectivo en Caja</h3>
+          <p>$3,500</p>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="quick-actions">
+        <button class="action-btn">Nuevo Pedido</button>
+        <button class="action-btn">Pedidos Abiertos</button>
+        <button class="action-btn">Cierre de Caja</button>
+        <button class="action-btn">Reportes</button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Pallevar. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

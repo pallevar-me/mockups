@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Pedidos Abiertos</title>
+  <style>/* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      margin: 0;
+      color: #1c2434;
+    }
+    
+    /* Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .filters label {
+      font-weight: bold;
+    }
+    
+    .filters input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .filter-btn {
+      background-color: #1c2434;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .filter-btn:hover {
+      background-color: #334960;
+    }
+    
+    /* Order List */
+    .order-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    /* Order Card */
+    .order-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: box-shadow 0.3s;
+    }
+    
+    .order-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .order-info h2 {
+      margin: 0;
+      color: #1c2434;
+    }
+    
+    .order-info p {
+      margin: 5px 0;
+    }
+    
+    .status {
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .status.preparing {
+      background-color: #ffeb3b;
+      color: #856404;
+    }
+    
+    .status.delivered {
+      background-color: #4caf50;
+      color: #fff;
+    }
+    
+    /* Order Actions */
+    .order-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .edit-btn,
+    .status-btn {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .edit-btn {
+      background-color: #2196f3;
+      color: #fff;
+    }
+    
+    .edit-btn:hover {
+      background-color: #1976d2;
+    }
+    
+    .status-btn {
+      background-color: #ff5722;
+      color: #fff;
+    }
+    
+    .status-btn:hover {
+      background-color: #e64a19;
+    }
+    .home-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1c2434;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+  background-color: #334960;
+}
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Gestión de Pedidos Abiertos</h1>
+      <a href="/" class="home-btn">Regresar a Inicio</a>
+    </header>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <label for="filter-mesa">Filtrar por Mesa:</label>
+      <input type="text" id="filter-mesa" placeholder="Ej: Mesa 5">
+
+      <label for="filter-pedido">Filtrar por Número de Pedido:</label>
+      <input type="text" id="filter-pedido" placeholder="Ej: 12345">
+      <button class="filter-btn">Aplicar Filtros</button>
+    </div>
+
+    <!-- Lista de Pedidos -->
+    <div class="order-list">
+      <div class="order-card">
+        <div class="order-info">
+          <h2>Pedido #12345</h2>
+          <p>Mesa: 5</p>
+          <p>Estado: <span class="status preparing">En preparación</span></p>
+        </div>
+        <div class="order-actions">
+          <button class="edit-btn">Añadir Productos</button>
+          <button class="edit-btn">Modificar Cantidad</button>
+          <button class="status-btn">Cambiar Estado</button>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div class="order-info">
+          <h2>Pedido #12346</h2>
+          <p>Mesa: 3</p>
+          <p>Estado: <span class="status delivered">Entregado</span></p>
+        </div>
+        <div class="order-actions">
+          <button class="edit-btn">Añadir Productos</button>
+          <button class="edit-btn">Modificar Cantidad</button>
+          <button class="status-btn">Cambiar Estado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

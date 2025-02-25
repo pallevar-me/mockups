@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla de Cierre de Caja</title>
+  <style>/* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      color: #1c2434;
+    }
+    
+    /* Totales del Día */
+    .totals {
+      margin-bottom: 20px;
+    }
+    
+    .totals h2 {
+      margin-bottom: 10px;
+      color: #1c2434;
+    }
+    
+    .total-card {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    
+    .total-card p {
+      margin: 0;
+      font-weight: bold;
+    }
+    
+    .total-card span {
+      color: #1c2434;
+    }
+    
+    /* Detalles de Ventas */
+    .details h2 {
+      margin-bottom: 10px;
+      color: #1c2434;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    thead {
+      background-color: #1c2434;
+      color: #fff;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    /* Botones de Acción */
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .action-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .print-btn {
+      background-color: #2196f3;
+      color: #fff;
+    }
+    
+    .print-btn:hover {
+      background-color: #1976d2;
+    }
+    
+    .save-btn {
+      background-color: #4caf50;
+      color: #fff;
+    }
+    
+    .save-btn:hover {
+      background-color: #388e3c;
+    }
+    
+    /* Confirmación de Cierre */
+    .confirmation {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .confirmation h2 {
+      color: #1c2434;
+      margin-bottom: 20px;
+    }
+    
+    .confirmation-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .confirm-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .confirm-close {
+      background-color: #ff5722;
+      color: #fff;
+    }
+    
+    .confirm-close:hover {
+      background-color: #e64a19;
+    }
+    
+    .cancel-close {
+      background-color: #9e9e9e;
+      color: #fff;
+    }
+    
+    .cancel-close:hover {
+      background-color: #757575;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Cierre de Caja</h1>
+    </header>
+
+    <!-- Totales del Día -->
+    <section class="totals">
+      <h2>Totales del Día</h2>
+      <div class="total-card">
+        <p>Efectivo:</p>
+        <span>$2,500.00</span>
+      </div>
+      <div class="total-card">
+        <p>Tarjeta:</p>
+        <span>$4,300.00</span>
+      </div>
+      <div class="total-card">
+        <p>Propinas:</p>
+        <span>$500.00</span>
+      </div>
+    </section>
+
+    <!-- Detalles de Ventas -->
+    <section class="details">
+      <h2>Detalles de Ventas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Turno</th>
+            <th>Cajero</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mañana</td>
+            <td>Juan Pérez</td>
+            <td>$3,500.00</td>
+          </tr>
+          <tr>
+            <td>Tarde</td>
+            <td>María López</td>
+            <td>$3,800.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Botones de Acción -->
+    <div class="actions">
+      <button class="action-btn print-btn">Imprimir Reporte</button>
+      <button class="action-btn save-btn">Guardar Reporte</button>
+    </div>
+
+    <!-- Confirmación de Cierre -->
+    <section class="confirmation">
+      <h2>¿Estás seguro de cerrar la caja?</h2>
+      <div class="confirmation-actions">
+        <button class="confirm-btn confirm-close">Cerrar Caja</button>
+        <button class="confirm-btn cancel-close">Cancelar</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
