@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Floristería</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf6f4;
+      color: #3a3a3a;
+      overflow-x: hidden; /* Evita scroll horizontal cuando offcanvas esté abierto */
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    nav {
+      background-color: #fff;
+      padding: 30px 20px;
+      width: 260px;
+      flex-shrink: 0;
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      border-right: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #d14b4b;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 12px 10px;
+      border-bottom: 1px solid #f0e9e8;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      transition: background 0.2s;
+    }
+
+    nav ul li:hover {
+      background-color: #fce6e6;
+      color: #a72c2c;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      height: 100vh;
+      position: relative;
+    }
+
+    .banner {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 0 5px;
+    }
+
+    .header-top h1 {
+      font-size: 1.6rem;
+      color: #d14b4b;
+      font-weight: 700;
+    }
+
+    .cart-icon {
+      cursor: pointer;
+      font-size: 28px;
+      color: #d14b4b;
+      position: relative;
+    }
+
+    /* Offcanvas panel */
+    .offcanvas-cart {
+      position: fixed;
+      top: 0;
+      right: -350px; /* oculto por defecto */
+      width: 350px;
+      height: 100vh;
+      background: white;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+      transition: right 0.3s ease-in-out;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .offcanvas-cart.open {
+      right: 0;
+    }
+
+    .offcanvas-cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .offcanvas-cart-header h2 {
+      font-size: 1.4rem;
+      color: #d14b4b;
+      margin: 0;
+    }
+
+    .offcanvas-close {
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      color: #d14b4b;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      color: #3a3a3a;
+    }
+
+    .cart-item-quantity {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* Otros estilos ya existentes */
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .item img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .item-details {
+      margin-top: 10px;
+    }
+
+    .item-details h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #3a3a3a;
+      margin-bottom: 4px;
+    }
+
+    .item-details .price {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #d14b4b;
+    }
+
+    .add-to-cart {
+      background-color: #f04e30;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #d94329;
+    }
+
+    .burger {
+      display: none;
+      position: fixed;
+      top: 10px;
+      right: 10px; /* Aquí se mueve al lado derecho */
+      background: white;
+      border: none;
+      padding: 10px 14px;
+      font-size: 24px;
+      z-index: 1001;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: row;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 220px;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      nav.open {
+        transform: translateX(0);
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .content {
+        padding-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="burger" onclick="toggleMenu()">☰</button>
+
+  <div class="layout">
+    <nav id="sidebar">
+      <h2>Flores</h2>
+      <ul>
+        <li>Rosas</li>
+        <li>Lirios</li>
+        <li>Girasoles</li>
+        <li>Tulipanes</li>
+        <li>Arreglos</li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <div class="header-top">
+        <h1>Floristería Bella Rosa</h1>
+        <div class="cart-icon" onclick="toggleCart()" title="Ver carrito">🛒</div>
+      </div>
+
+      <div class="banner"></div>
+
+      <div class="items-grid">
+        <div class="item" data-name="Ramo de Rosas" data-price="200">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Ramo de Rosas" />
+          <div>Ramo de Rosas</div>
+          <button class="add-to-cart" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+        <div class="item" data-name="Centro de Mesa con Girasoles" data-price="350">
+          <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=400&q=80" alt="Centro de Mesa con Girasoles" />
+          <div>Centro de Mesa con Girasoles</div>
+          <button class="add-to-cart" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+        <div class="item" data-name="Arreglo de Tulipanes" data-price="280">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=400&q=80" alt="Arreglo de Tulipanes" />
+          <div>Arreglo de Tulipanes</div>
+          <button class="add-to-cart" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+        <div class="item" data-name="Caja de Lirios Premium" data-price="320">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=400&q=80" alt="Caja de Lirios Premium" />
+          <div>Caja de Lirios Premium</div>
+          <button class="add-to-cart" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="offcanvas-cart" class="offcanvas-cart">
+    <div class="offcanvas-cart-header">
+      <h2>Carrito</h2>
+      <button class="offcanvas-close" onclick="toggleCart()" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p>Tu carrito está vacío.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('sidebar');
+      nav.classList.toggle('open');
+    }
+
+    function toggleCart() {
+      const cart = document.getElementById('offcanvas-cart');
+      cart.classList.toggle('open');
+    }
+
+    // Estado del carrito
+    const cart = [];
+
+    function addToCart(event) {
+      const itemElement = event.target.closest('.item');
+      const name = itemElement.getAttribute('data-name');
+      const price = parseFloat(itemElement.getAttribute('data-price'));
+
+      // Busca si ya está en el carrito
+      const existingItem = cart.find(i => i.name === name);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+
+      renderCart();
+      toggleCart();
+    }
+
+    function renderCart() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
+        return;
+      }
+
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+
+        div.innerHTML = `
+          <div>
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-quantity">Cantidad: ${item.quantity}</div>
+          </div>
+          <div>$${(item.price * item.quantity).toFixed(2)}</div>
+        `;
+
+        cartItemsContainer.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
